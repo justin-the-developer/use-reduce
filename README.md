@@ -15,13 +15,14 @@ npm install --save use-reduce
 ```tsx
 import * as React from 'react'
 
-import { useMyHook } from 'use-reduce'
+import { useAddAllElements, useMultiplyAllElements } from 'use-reduce'
 
 const Example = () => {
-  const example = useMyHook()
+  const example = useAddAllElements([1,2,3,4,5])
+    
   return (
     <div>
-      {example}
+      {example} // 15
     </div>
   )
 }
