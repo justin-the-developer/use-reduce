@@ -1,23 +1,13 @@
-import * as React from 'react';
+type ArrayProps = number[];
 
-export const useMyHook = () => {
-  let [{
-    counter
-  }, setState] = React.useState<{
-    counter: number;
-  }>({
-    counter: 0
-  });
+const add = (a: number, b: number) => {
+  return a+b;
+}
 
-  React.useEffect(() => {
-    let interval = window.setInterval(() => {
-      counter--;
-      setState({counter})
-    }, 1000)
-    return () => {
-      window.clearInterval(interval);
-    };
-  }, []);
+const multiply = (a: number, b: number) => {
+  return a * b;
+}
 
-  return counter;
-};
+export const useAddAllElements = (arr: ArrayProps) => arr.reduce(add, 0);
+
+export const useMultiplyAllElements = (arr: ArrayProps) => arr.reduce(multiply, 1);
