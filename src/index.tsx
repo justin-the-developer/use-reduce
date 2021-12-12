@@ -1,15 +1,7 @@
 import { ArrayProps, ObjectArrayProps, ConvertDictionaryProps} from "./type";
-import { isEmpty } from "./utils/is-empty";
-
-const add = (a: number, b: number) => {
-  return a+b;
-}
+import { isEmpty, add, multiply } from "./utils";
 
 export const useAddAllElements = (arr: ArrayProps) => arr.reduce(add, 0);
-
-const multiply = (a: number, b: number) => {
-  return a * b;
-}
 
 export const useMultiplyAllElements = (arr: ArrayProps) => arr.reduce(multiply, 1);
 
